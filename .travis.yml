@@ -5,6 +5,8 @@ sudo: false
 warnings_are_errors: true
 cache: packages
 
+jdk: oraclejdk8
+
 env:
   - GCAMDATA_USE_JAVA=TRUE
 
