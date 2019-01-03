@@ -23,7 +23,7 @@ test_that("matches old data system output", {
 
   if(identical(Sys.getenv("TRAVIS"), "true")) {
     # Run the driver and save chunk outputs
-    gcam_data_map <- driver(write_outputs = TRUE, quiet = TRUE, outdir = outputs_dir, xmldir = xml_dir, return_data_map_only = TRUE)
+    gcam_data_map <- driver(write_outputs = TRUE, write_xml = FALSE, quiet = TRUE, outdir = outputs_dir, xmldir = xml_dir, return_data_map_only = TRUE)
 
     # The following two tests are only run on Travis because they will fail
     # during the R CMD CHECK process locally (as the R build process removes outputs/)

@@ -6,7 +6,7 @@ warnings_are_errors: true
 cache: packages
 
 env:
-  - GCAMDATA_USE_JAVA=FALSE
+  - GCAMDATA_USE_JAVA=TRUE
 
 r_github_packages:
   - jimhester/covr@adffd69
