@@ -14,6 +14,8 @@ r_github_packages:
 script:
   - echo $PATH
   - echo $JAVA_HOME
+  - which java
+  - which python
   - R CMD build .
   - travis_wait 30 R CMD check *.tar.gz
 
