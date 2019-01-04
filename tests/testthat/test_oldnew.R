@@ -112,7 +112,7 @@ test_that("matches old data system output", {
     }
     # Explicitly clean up COMPDATA as it uses a lot of memory and gets loaded into the
     # Global environment
-    rm(COMPDATA)
+    rm(COMPDATA, envir = .GlobalEnv)
     gc()
   }
 })
