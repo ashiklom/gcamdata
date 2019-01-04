@@ -6,7 +6,10 @@ test_that('Java is available', {
   if(!isTRUE(getOption("gcamdata.use_java"))) {
     skip("Skipping test as global option gcamdata.use_java is not TRUE")
   }
-  cmd <- system2('which', 'java', stdout=TRUE)
+  conn <- pipe('which java', open = "r")
+  cmd <- readLines(conn)
+  close(conn)
+  #cmd <- system2('which', 'java', stdout=TRUE)
   expect_true(file.exists(cmd), "Can't find java runtime for XML conversion tests.")
 })
 
