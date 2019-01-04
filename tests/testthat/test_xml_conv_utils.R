@@ -2,6 +2,14 @@
 
 context("xml")
 
+test_that('Java is available', {
+  if(!isTRUE(getOption("gcamdata.use_java"))) {
+    skip("Skipping test as global option gcamdata.use_java is not TRUE")
+  }
+  cmd <- system2('which', 'java', stdout=TRUE)
+  expect_true(file.exists(cmd), "Can't find java runtime for XML conversion tests.")
+})
+
 test_that("default MI header exists in the package", {
   conv_test <- create_xml("test.xml")
 
